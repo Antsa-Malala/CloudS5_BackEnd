@@ -1,4 +1,4 @@
-package WebServices.TP1.model;
+package cloud.projetS5.model;
 
 public class Reponse<T> {
     private String erreur;
@@ -11,7 +11,6 @@ public class Reponse<T> {
 
     public void setErreur(String erreur) {
         this.erreur = erreur;
-        this.setSuccess(false);
     }
 
     public String getRemarque() {
