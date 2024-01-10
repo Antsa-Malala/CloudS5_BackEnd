@@ -41,7 +41,8 @@ public class CategorieService {
     public Categorie deleteCategorieById(Integer id) {
         Categorie categorieToDelete = categorieRepository.findById(id).orElse(null);
         if(categorieToDelete != null){
-            categorieRepository.delete(categorieToDelete);
+            categorieToDelete.setEtat(10);
+            categorieRepository.save(categorieToDelete);
             return categorieToDelete;
         }else{
             return null;

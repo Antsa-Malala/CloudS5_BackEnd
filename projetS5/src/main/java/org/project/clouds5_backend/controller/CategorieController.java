@@ -1,6 +1,7 @@
 package org.project.clouds5_backend.controller;
 
 import org.project.clouds5_backend.model.Categorie;
+import org.project.clouds5_backend.model.Reponse;
 import org.project.clouds5_backend.repository.CategorieRepository;
 import org.project.clouds5_backend.service.CategorieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,52 +21,83 @@ public class CategorieController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Categorie>> getAllCategories() {
+    public Reponse<List<Categorie>> getAllCategories() {
         List<Categorie> categories = categorieService.getAllCategories();
-        if(!categories.isEmpty()){
-            return ResponseEntity.ok(categories);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<List<Categorie>> reponse = new Reponse<>();
+        try{
+            if(!categories.isEmpty()){
+                reponse.setData(categories);
+                reponse.setRemarque("Liste des categories");
+            }else{
+                reponse.setErreur("Liste vide");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Categorie> getCategorieById(@PathVariable Integer id) {
+    public Reponse<Categorie> getCategorieById(@PathVariable Integer id) {
         Categorie categorie = categorieService.getCategorieById(id);
+        Reponse<Categorie> reponse = new Reponse<>();
+        try{
         if(categorie != null){
-            return ResponseEntity.ok(categorie);
+            reponse.setData(categorie);
+            reponse.setRemarque("Categorie trouvee");
         }else{
-            return ResponseEntity.notFound().build();
+            reponse.setErreur("Categorie non trouvee");
         }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
+        }
+        return reponse;
     }
 
     @PostMapping
-    public ResponseEntity<Categorie> createCategorie(@RequestBody Categorie categorie) {
+    public Reponse<Categorie> createCategorie(@RequestBody Categorie categorie) {
+        Reponse<Categorie> reponse = new Reponse<>();
         try{
             categorieService.createCategorie(categorie);
-            return ResponseEntity.ok(categorie);
+            reponse.setData(categorie);
+            reponse.setRemarque("Categorie creee");
         }catch (Exception e){
-            return ResponseEntity.notFound().build();
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Categorie> updateCategorieById(@PathVariable Integer id, @RequestBody Categorie categorie) {
+    public Reponse<Categorie> updateCategorieById(@PathVariable Integer id, @RequestBody Categorie categorie) {
         Categorie categorieToUpdate = categorieService.updateCategorieById(id, categorie);
-        if(categorieToUpdate != null){
-            return ResponseEntity.ok(categorieToUpdate);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Categorie> reponse = new Reponse<>();
+        try{
+            if(categorieToUpdate != null){
+                reponse.setData(categorieToUpdate);
+                reponse.setRemarque("Categorie mise a jour");
+            }else{
+                reponse.setErreur("Categorie non mise a jour");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Categorie> deleteCategorieById(@PathVariable Integer id) {
+    public Reponse<Categorie> deleteCategorieById(@PathVariable Integer id) {
         Categorie categorie = categorieService.deleteCategorieById(id);
-        if(categorie != null){
-            return ResponseEntity.ok(categorie);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Categorie> reponse = new Reponse<>();
+        try {
+            if (categorie != null) {
+                reponse.setData(categorie);
+                reponse.setRemarque("Categorie supprimee");
+            } else {
+                reponse.setErreur("Categorie non supprimee");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 }

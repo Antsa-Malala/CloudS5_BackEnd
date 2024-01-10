@@ -41,7 +41,8 @@ public class MarqueService {
     public Marque deleteMarqueById(Integer id) {
         Marque marqueToDelete = marqueRepository.findById(id).orElse(null);
         if(marqueToDelete != null){
-            marqueRepository.delete(marqueToDelete);
+            marqueToDelete.setEtat(10);
+            marqueRepository.save(marqueToDelete);
             return marqueToDelete;
         }else{
             return null;

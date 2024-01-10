@@ -1,5 +1,6 @@
 package org.project.clouds5_backend.controller;
 
+import org.project.clouds5_backend.model.Reponse;
 import org.project.clouds5_backend.model.Ville;
 import org.project.clouds5_backend.service.VilleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,53 +20,84 @@ public class VilleController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Ville>> getAllVilles() {
+    public Reponse<List<Ville>> getAllVilles() {
         List<Ville> villes = villeService.getAllVilles();
-        if(!villes.isEmpty()){
-            return ResponseEntity.ok(villes);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<List<Ville>> reponse = new Reponse<>();
+        try{
+            if(!villes.isEmpty()){
+                reponse.setData(villes);
+                reponse.setRemarque("Liste des villes");
+            }else{
+                reponse.setErreur("Liste vide");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+       return reponse;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Ville> getVilleById(@PathVariable Integer id) {
+    public Reponse<Ville> getVilleById(@PathVariable Integer id) {
         Ville ville = villeService.getVilleById(id);
-        if(ville != null){
-            return ResponseEntity.ok(ville);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Ville> reponse = new Reponse<>();
+        try{
+            if(ville != null){
+                reponse.setData(ville);
+                reponse.setRemarque("Ville trouvee");
+            }else{
+                reponse.setErreur("Ville non trouvee");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @PostMapping
-    public ResponseEntity<Ville> createVille(@RequestBody Ville ville) {
+    public Reponse<Ville> createVille(@RequestBody Ville ville) {
+        Reponse<Ville> reponse = new Reponse<>();
         try{
             villeService.createVille(ville);
-            return ResponseEntity.ok(ville);
+            reponse.setData(ville);
+            reponse.setRemarque("Ville creee");
         }catch (Exception e){
-            return ResponseEntity.notFound().build();
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Ville> updateVilleById(@PathVariable Integer id, @RequestBody Ville ville) {
+    public Reponse<Ville> updateVilleById(@PathVariable Integer id, @RequestBody Ville ville) {
         Ville villeToUpdate = villeService.updateVilleById(id, ville);
-        if(villeToUpdate != null){
-            return ResponseEntity.ok(villeToUpdate);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Ville> reponse = new Reponse<>();
+        try{
+            if(villeToUpdate != null){
+                reponse.setData(villeToUpdate);
+                reponse.setRemarque("Ville mise a jour");
+            }else{
+                reponse.setErreur("Ville non mise a jour");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Ville> deleteVilleById(@PathVariable Integer id) {
+    public Reponse<Ville> deleteVilleById(@PathVariable Integer id) {
         Ville villeToDelete = villeService.deleteVilleById(id);
-        if(villeToDelete != null){
-            return ResponseEntity.ok(villeToDelete);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Ville> reponse = new Reponse<>();
+        try{
+            if(villeToDelete != null){
+                reponse.setData(villeToDelete);
+                reponse.setRemarque("Ville supprimee");
+            }else{
+                reponse.setErreur("Ville non supprimee");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+         return reponse;
     }
 
 }

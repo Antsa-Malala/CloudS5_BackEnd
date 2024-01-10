@@ -1,6 +1,7 @@
 package org.project.clouds5_backend.controller;
 
 import org.project.clouds5_backend.model.Marque;
+import org.project.clouds5_backend.model.Reponse;
 import org.project.clouds5_backend.service.MarqueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,52 +20,83 @@ public class MarqueController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Marque>> getAllMarques() {
+    public Reponse<List<Marque>> getAllMarques() {
         List<Marque> marques = marqueService.getAllMarques();
-        if(!marques.isEmpty()){
-            return ResponseEntity.ok(marques);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<List<Marque>> marque = new Reponse<>();
+        try{
+            if(!marques.isEmpty()){
+                marque.setData(marques);
+                marque.setRemarque("Liste des marques");
+            }else{
+                marque.setErreur("Liste vide");
+            }
+        }catch (Exception e) {
+            marque.setErreur(e.getMessage());
         }
+        return marque;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Marque> getMarqueById(@PathVariable Integer id) {
+    public Reponse<Marque> getMarqueById(@PathVariable Integer id) {
         Marque marque = marqueService.getMarqueById(id);
-        if(marque != null){
-            return ResponseEntity.ok(marque);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Marque> reponse = new Reponse<>();
+        try{
+            if(marque != null){
+                reponse.setData(marque);
+                reponse.setRemarque("Marque trouvee");
+            }else{
+                reponse.setErreur("Marque non trouvee");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @PostMapping
-    public ResponseEntity<Marque> createMarque(@RequestBody Marque marque) {
+    public Reponse<Marque> createMarque(@RequestBody Marque marque) {
+        Reponse<Marque> reponse = new Reponse<>();
         try{
             marqueService.createMarque(marque);
-            return ResponseEntity.ok(marque);
+            reponse.setData(marque);
+            reponse.setRemarque("Marque creee");
         }catch (Exception e){
-            return ResponseEntity.notFound().build();
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Marque> updateMarqueById(@PathVariable Integer id, @RequestBody Marque marque) {
+    public Reponse<Marque> updateMarqueById(@PathVariable Integer id, @RequestBody Marque marque) {
         Marque marqueToUpdate = marqueService.updateMarqueById(id, marque);
-        if(marqueToUpdate != null){
-            return ResponseEntity.ok(marqueToUpdate);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Marque> reponse = new Reponse<>();
+        try{
+            if(marqueToUpdate != null){
+                reponse.setData(marqueToUpdate);
+                reponse.setRemarque("Marque mise a jour");
+            }else{
+                reponse.setErreur("Marque non mise a jour");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+        return reponse;
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Marque> deleteMarqueById(@PathVariable Integer id) {
+    public Reponse<Marque> deleteMarqueById(@PathVariable Integer id) {
         Marque marqueToDelete = marqueService.deleteMarqueById(id);
-        if(marqueToDelete != null){
-            return ResponseEntity.ok(marqueToDelete);
-        }else{
-            return ResponseEntity.notFound().build();
+        Reponse<Marque> reponse = new Reponse<>();
+        try{
+            if(marqueToDelete != null){
+                reponse.setData(marqueToDelete);
+                reponse.setRemarque("Marque supprimee");
+            }else{
+                reponse.setErreur("Marque non supprimee");
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
         }
+       return reponse;
     }
 }
