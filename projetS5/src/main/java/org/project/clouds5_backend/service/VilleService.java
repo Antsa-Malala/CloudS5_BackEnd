@@ -4,7 +4,9 @@ import org.project.clouds5_backend.model.Ville;
 import org.project.clouds5_backend.repository.VilleRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VilleService {
@@ -15,35 +17,51 @@ public class VilleService {
     }
 
     public List<Ville> getAllVilles() {
-        return (List<Ville>) villeRepository.findAll();
+        List<Ville> villes = villeRepository.findByEtatNot(10);
+        if(villes.isEmpty()){
+            return Collections.emptyList();
+        }else{
+            return villes;
+        }
     }
 
     public Ville getVilleById(Integer id) {
-        return villeRepository.findById(id).orElse(null);
+        Ville ville = villeRepository.findByIdVilleAndEtatNot(id, 10);
+        if(ville == null) {
+            return null;
+        }
+        return ville;
     }
 
     public Ville createVille(Ville ville) {
-        return villeRepository.save(ville);
+        try{
+            return villeRepository.save(ville);
+        }catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     public Ville updateVilleById(Integer id, Ville ville) {
-        Ville villeToUpdate = villeRepository.findById(id).orElse(null);
-        if(villeToUpdate != null){
+        Optional<Ville> optionalVille = Optional.ofNullable(villeRepository.findByIdVilleAndEtatNot(id, 10));
+        if(optionalVille.isPresent()){
+            Ville villeToUpdate = optionalVille.get();
             villeToUpdate.setNomVille(ville.getNomVille());
             villeRepository.save(villeToUpdate);
             return villeToUpdate;
-        }else{
-            return null;
+        }else {
+            throw new RuntimeException("Ville non trouvee");
         }
     }
 
     public Ville deleteVilleById(Integer id) {
-        Ville villeToDelete = villeRepository.findById(id).orElse(null);
-        if(villeToDelete != null){
-            villeRepository.delete(villeToDelete);
+        Optional<Ville> optionalVille = Optional.ofNullable(villeRepository.findByIdVilleAndEtatNot(id, 10));
+        if(optionalVille.isPresent()){
+            Ville villeToDelete = optionalVille.get();
+            villeToDelete.setEtat(10);
+            villeRepository.save(villeToDelete);
             return villeToDelete;
-        }else{
-            return null;
+        }else {
+            throw new RuntimeException("Ville non trouvee");
         }
     }
 }

@@ -5,7 +5,9 @@ import org.project.clouds5_backend.repository.CategorieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategorieService {
@@ -16,35 +18,50 @@ public class CategorieService {
     }
 
     public List<Categorie> getAllCategories() {
-        return categorieRepository.findAll();
+        List<Categorie> categories = categorieRepository.findByEtatNot(10);
+        if(categories.isEmpty()){
+            return Collections.emptyList();
+        }
+        return categories;
     }
 
     public Categorie getCategorieById(Integer id) {
-        return categorieRepository.findById(id).orElse(null);
+        Categorie categorie = categorieRepository.findByIdCategorieAndEtatNot(id, 10);
+        if(categorie == null){
+            return null;
+        }
+        return categorie;
     }
 
     public Categorie createCategorie(Categorie categorie) {
-        return categorieRepository.save(categorie);
+        try{
+            return categorieRepository.save(categorie);
+        }catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     public Categorie updateCategorieById(Integer id, Categorie categorie) {
-        Categorie categorieToUpdate = categorieRepository.findById(id).orElse(null);
-        if(categorieToUpdate != null){
+        Optional<Categorie> optionalCategorie = Optional.ofNullable(categorieRepository.findByIdCategorieAndEtatNot(id, 10));
+        if(optionalCategorie.isPresent()){
+            Categorie categorieToUpdate = optionalCategorie.get();
             categorieToUpdate.setNomCategorie(categorie.getNomCategorie());
             categorieRepository.save(categorieToUpdate);
             return categorieToUpdate;
-        }else{
-            return null;
+        }else {
+            throw new RuntimeException("Categorie non trouvee");
         }
     }
 
     public Categorie deleteCategorieById(Integer id) {
-        Categorie categorieToDelete = categorieRepository.findById(id).orElse(null);
-        if(categorieToDelete != null){
-            categorieRepository.delete(categorieToDelete);
+        Optional<Categorie> optionalCategorie = Optional.ofNullable(categorieRepository.findByIdCategorieAndEtatNot(id, 10));
+        if(optionalCategorie.isPresent()){
+            Categorie categorieToDelete = optionalCategorie.get();
+            categorieToDelete.setEtat(10);
+            categorieRepository.save(categorieToDelete);
             return categorieToDelete;
         }else{
-            return null;
+            throw new RuntimeException("Categorie non trouvee");
         }
     }
 }
