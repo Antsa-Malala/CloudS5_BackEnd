@@ -1,6 +1,7 @@
 package org.project.clouds5_backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Marque {
@@ -8,18 +9,10 @@ public class Marque {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_marque")
     private int idMarque;
-    @Column(name = "nom_marque")
+    @NotBlank(message = "Le nom de la marque est obligatoire")
+    @Column(name = "nom_marque", nullable = false)
     private String nomMarque;
     private int etat;
-
-    public Marque() {
-    }
-
-    public Marque(int idMarque, String nomMarque, int etat) {
-        this.idMarque = idMarque;
-        this.nomMarque = nomMarque;
-        this.etat = etat;
-    }
 
     public int getIdMarque() {
         return idMarque;
@@ -43,5 +36,14 @@ public class Marque {
 
     public void setEtat(int etat) {
         this.etat = etat;
+    }
+
+    public Marque() {
+    }
+
+    public Marque(int idMarque, String nomMarque, int etat) {
+        this.setIdMarque(idMarque);
+        this.setNomMarque(nomMarque);
+        this.setEtat(etat);
     }
 }

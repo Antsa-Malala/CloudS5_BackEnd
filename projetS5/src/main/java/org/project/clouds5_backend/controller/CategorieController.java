@@ -1,10 +1,12 @@
 package org.project.clouds5_backend.controller;
 
+import jakarta.validation.Valid;
 import org.project.clouds5_backend.model.Categorie;
 import org.project.clouds5_backend.model.Reponse;
 import org.project.clouds5_backend.repository.CategorieRepository;
 import org.project.clouds5_backend.service.CategorieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,83 +23,97 @@ public class CategorieController {
     }
 
     @GetMapping
-    public Reponse<List<Categorie>> getAllCategories() {
-        List<Categorie> categories = categorieService.getAllCategories();
+    public ResponseEntity<Reponse<List<Categorie>>> getAllCategories() {
         Reponse<List<Categorie>> reponse = new Reponse<>();
-        try{
-            if(!categories.isEmpty()){
+        try {
+            List<Categorie> categories = categorieService.getAllCategories();
+            if (!categories.isEmpty()) {
                 reponse.setData(categories);
                 reponse.setRemarque("Liste des categories");
-            }else{
+                return ResponseEntity.ok().body(reponse);
+            } else {
                 reponse.setErreur("Liste vide");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(reponse);
             }
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(reponse);
         }
-        return reponse;
     }
 
     @GetMapping("/{id}")
-    public Reponse<Categorie> getCategorieById(@PathVariable Integer id) {
-        Categorie categorie = categorieService.getCategorieById(id);
+    public ResponseEntity<Reponse<Categorie>> getCategorieById(@PathVariable Integer id) {
         Reponse<Categorie> reponse = new Reponse<>();
         try{
-        if(categorie != null){
-            reponse.setData(categorie);
-            reponse.setRemarque("Categorie trouvee");
-        }else{
-            reponse.setErreur("Categorie non trouvee");
-        }
+            Categorie categorie = categorieService.getCategorieById(id);
+            if(categorie != null){
+                reponse.setData(categorie);
+                reponse.setRemarque("Categorie trouvee");
+                return ResponseEntity.ok().body(reponse);
+            }else{
+                reponse.setErreur("Categorie non trouvee");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(reponse);
+            }
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(reponse);
         }
-        return reponse;
     }
 
     @PostMapping
-    public Reponse<Categorie> createCategorie(@RequestBody Categorie categorie) {
+    public ResponseEntity<Reponse<Categorie>> createCategorie(@Valid @RequestBody Categorie categorie) {
         Reponse<Categorie> reponse = new Reponse<>();
         try{
-            categorieService.createCategorie(categorie);
-            reponse.setData(categorie);
-            reponse.setRemarque("Categorie creee");
-        }catch (Exception e){
+            Categorie categorieCreated = categorieService.createCategorie(categorie);
+            if(categorieCreated != null){
+                reponse.setData(categorieCreated);
+                reponse.setRemarque("Categorie creee");
+                return ResponseEntity.status(HttpStatus.CREATED).body(reponse);
+            }else{
+                reponse.setErreur("Categorie non creee");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(reponse);
+            }
+        }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(reponse);
         }
-        return reponse;
     }
 
     @PutMapping("/{id}")
-    public Reponse<Categorie> updateCategorieById(@PathVariable Integer id, @RequestBody Categorie categorie) {
-        Categorie categorieToUpdate = categorieService.updateCategorieById(id, categorie);
+    public ResponseEntity<Reponse<Categorie>> updateCategorieById(@PathVariable Integer id, @Valid @RequestBody Categorie categorie) {
         Reponse<Categorie> reponse = new Reponse<>();
         try{
-            if(categorieToUpdate != null){
-                reponse.setData(categorieToUpdate);
+            Categorie categorieUpdated = categorieService.updateCategorieById(id, categorie);
+            if(categorieUpdated != null){
+                reponse.setData(categorieUpdated);
                 reponse.setRemarque("Categorie mise a jour");
+                return ResponseEntity.ok().body(reponse);
             }else{
-                reponse.setErreur("Categorie non mise a jour");
+                reponse.setErreur("Categorie non trouvee");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(reponse);
             }
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(reponse);
         }
-        return reponse;
     }
 
     @DeleteMapping("/{id}")
-    public Reponse<Categorie> deleteCategorieById(@PathVariable Integer id) {
-        Categorie categorie = categorieService.deleteCategorieById(id);
+    public ResponseEntity<Reponse<Categorie>> deleteCategorieById(@PathVariable Integer id) {
         Reponse<Categorie> reponse = new Reponse<>();
-        try {
-            if (categorie != null) {
-                reponse.setData(categorie);
+        try{
+            Categorie categorieDeleted = categorieService.deleteCategorieById(id);
+            if(categorieDeleted != null){
+                reponse.setData(categorieDeleted);
                 reponse.setRemarque("Categorie supprimee");
-            } else {
-                reponse.setErreur("Categorie non supprimee");
+                return ResponseEntity.ok().body(reponse);
+            }else{
+                reponse.setErreur("Categorie non trouvee");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(reponse);
             }
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(reponse);
         }
-        return reponse;
     }
 }

@@ -1,6 +1,7 @@
 package org.project.clouds5_backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Ville {
@@ -8,18 +9,10 @@ public class Ville {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_ville")
     private int idVille;
-    @Column(name = "nom_ville")
+    @NotBlank(message = "Le nom de la ville est obligatoire")
+    @Column(name = "nom_ville", nullable = false)
     private String nomVille;
     private int etat;
-
-    public Ville() {
-    }
-
-    public Ville(int idVille, String nomVille, int etat) {
-        this.idVille = idVille;
-        this.nomVille = nomVille;
-        this.etat = etat;
-    }
 
     public int getIdVille() {
         return idVille;
@@ -43,5 +36,18 @@ public class Ville {
 
     public void setEtat(int etat) {
         this.etat = etat;
+    }
+
+    public Ville() {
+    }
+
+    public Ville(int idVille, String nomVille, int etat) {
+        this.setIdVille(idVille);
+        this.setNomVille(nomVille);
+        this.setEtat(etat);
+    }
+
+    public Ville(int idVille){
+        this.setIdVille(idVille);
     }
 }

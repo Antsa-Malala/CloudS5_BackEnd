@@ -4,6 +4,7 @@ import org.project.clouds5_backend.model.Reponse;
 import org.project.clouds5_backend.model.Statistique;
 import org.project.clouds5_backend.service.StatistiqueService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,58 +18,58 @@ public class StatistiqueController {
     }
 
     @GetMapping("/nbUtilisateurs")
-    public Reponse<Statistique> getNbUtilisateurs() {
-        Statistique statistique = statistiqueService.getNbUtilisateurs();
+    public ResponseEntity<Reponse<Statistique>> getNbUtilisateurs() {
         Reponse<Statistique> reponse = new Reponse<>();
         try{
+            Statistique statistique = statistiqueService.getNbUtilisateurs();
             reponse.setData(statistique);
             reponse.setRemarque("Nombre d'utilisateurs");
+            return ResponseEntity.ok().body(reponse);
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(500).body(reponse);
         }
-        return reponse;
     }
 
     @GetMapping("/venduByPrix")
-    public Reponse<Statistique> getVenduByPrix(@RequestParam("prix1") double prix1,@RequestParam("prix2") double prix2) {
-        Statistique statistique = statistiqueService.getVenduByPrix(prix1, prix2);
+    public ResponseEntity<Reponse<Statistique>> getVenduByPrix(@RequestParam("prix1") double prix1,@RequestParam("prix2") double prix2) {
         Reponse<Statistique> reponse = new Reponse<>();
         try{
+            Statistique statistique = statistiqueService.getVenduByPrix(prix1, prix2);
             reponse.setData(statistique);
-            reponse.setRemarque("Nombre de produits vendus entre " + prix1 + " et " + prix2);
+            reponse.setRemarque("Nombre de véhicules vendus entre " + prix1 + " et " + prix2);
+            return ResponseEntity.ok().body(reponse);
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(500).body(reponse);
         }
-        return reponse;
     }
 
     @GetMapping("/annonceByMarque")
-    public Reponse<Statistique> getAnnonceByMarque(@RequestParam("marque") String marque) {
-        Statistique statistique = statistiqueService.getAnnonceByMarque(marque);
+    public ResponseEntity<Reponse<Statistique>> getAnnonceByMarque(@RequestParam("marque") String marque) {
         Reponse<Statistique> reponse = new Reponse<>();
         try{
-            if(statistique != null) {
-                reponse.setData(statistique);
-                reponse.setRemarque("Nombre d'annonce de la marque " + marque);
-            }else{
-                reponse.setErreur("Marque non trouvee");
-            }
+            Statistique statistique = statistiqueService.getAnnonceByMarque(marque);
+            reponse.setData(statistique);
+            reponse.setRemarque("Nombre d'annonces de la marque " + marque);
+            return ResponseEntity.ok().body(reponse);
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(500).body(reponse);
         }
-        return reponse;
     }
 
     @GetMapping("/beneficeByMois")
-    public Reponse<Statistique> getBeneficeByMois(@RequestParam("mois") int mois,@RequestParam("annee") int annee) {
-        Statistique statistique = statistiqueService.getBeneficeByMois(mois, annee);
+    public ResponseEntity<Reponse<Statistique>> getBeneficeByMois(@RequestParam("mois") int mois,@RequestParam("annee") int annee) {
         Reponse<Statistique> reponse = new Reponse<>();
         try{
+            Statistique statistique = statistiqueService.getBeneficeByMois(mois, annee);
             reponse.setData(statistique);
             reponse.setRemarque("Bénéfice du mois " + mois + " de l'année " + annee);
+            return ResponseEntity.ok().body(reponse);
         }catch (Exception e) {
             reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(500).body(reponse);
         }
-        return reponse;
     }
 }

@@ -1,6 +1,7 @@
 package org.project.clouds5_backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Categorie {
@@ -8,18 +9,10 @@ public class Categorie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categorie")
     private int idCategorie;
-    @Column(name = "nom_categorie")
+    @NotBlank(message = "Le nom de la catégorie est obligatoire")
+    @Column(name = "nom_categorie", nullable = false)
     private String nomCategorie;
     private int etat;
-
-    public Categorie() {
-    }
-
-    public Categorie(int idCategorie, String nomCategorie, int etat) {
-        this.idCategorie = idCategorie;
-        this.nomCategorie = nomCategorie;
-        this.etat = etat;
-    }
 
     public int getIdCategorie() {
         return idCategorie;
@@ -43,5 +36,14 @@ public class Categorie {
 
     public void setEtat(int etat) {
         this.etat = etat;
+    }
+
+    public Categorie() {
+    }
+
+    public Categorie(int idCategorie, String nomCategorie, int etat) {
+        this.setIdCategorie(idCategorie);
+        this.setNomCategorie(nomCategorie);
+        this.setEtat(etat);
     }
 }
