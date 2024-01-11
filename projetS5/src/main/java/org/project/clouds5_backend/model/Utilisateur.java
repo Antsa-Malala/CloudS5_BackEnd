@@ -7,8 +7,6 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 public class Utilisateur {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_utilisateur")
-    @SequenceGenerator(name = "seq_utilisateur", sequenceName = "seq_utilisateur", allocationSize = 1)
     @Column(name = "id_utilisateur")
     private String idUtilisateur;
     @NotBlank(message = "Le nom est obligatoire")

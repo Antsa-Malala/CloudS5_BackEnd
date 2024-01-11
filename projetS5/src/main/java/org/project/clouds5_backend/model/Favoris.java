@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 @Entity
 public class Favoris {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "favoris_generator")
-    @SequenceGenerator(name = "favoris_generator", sequenceName = "seq_favoris", allocationSize = 1)
     @Column(name = "id_favoris")
     private String idFavoris;
     @ManyToOne

@@ -1,12 +1,11 @@
 package org.project.clouds5_backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Voiture {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "voiture_generator")
-    @SequenceGenerator(name = "voiture_generator", sequenceName = "seq_voiture", allocationSize = 1)
     @Column(name = "id_voiture")
     private String idVoiture;
     @ManyToOne
@@ -25,9 +24,9 @@ public class Voiture {
     @JoinColumn(name = "id_boite", nullable = false)
     private Boite boite;
     private double consommation;
-    @ManyToOne
-    @JoinColumn(name = "valeur", nullable = false)
-    private Place place;
+    @NotNull(message = "La place est obligatoire")
+    @Column(name = "nb_place", nullable = false)
+    private int Nbplace;
     @ManyToOne
     @JoinColumn(name = "id_porte", nullable = false)
     private Porte porte;
@@ -93,12 +92,12 @@ public class Voiture {
         this.consommation = consommation;
     }
 
-    public Place getPlace() {
-        return place;
+    public int getNbplace() {
+        return Nbplace;
     }
 
-    public void setPlace(Place place) {
-        this.place = place;
+    public void setNbplace(int nbplace) {
+        Nbplace = nbplace;
     }
 
     public Porte getPorte() {
@@ -136,7 +135,7 @@ public class Voiture {
     public Voiture() {
     }
 
-    public Voiture(String idVoiture, Categorie categorie, Marque marque, Modele modele, Energie energie, Boite boite, double consommation, Place place, Porte porte, double kilometrage, Couleur couleur, int etat) {
+    public Voiture(String idVoiture, Categorie categorie, Marque marque, Modele modele, Energie energie, Boite boite, double consommation, int Nbplace, Porte porte, double kilometrage, Couleur couleur, int etat) {
         this.setIdVoiture(idVoiture);
         this.setCategorie(categorie);
         this.setMarque(marque);
@@ -144,7 +143,7 @@ public class Voiture {
         this.setEnergie(energie);
         this.setBoite(boite);
         this.setConsommation(consommation);
-        this.setPlace(place);
+        this.setNbplace(Nbplace);
         this.setPorte(porte);
         this.setKilometrage(kilometrage);
         this.setCouleur(couleur);

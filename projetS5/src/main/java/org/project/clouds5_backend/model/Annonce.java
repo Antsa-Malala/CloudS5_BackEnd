@@ -7,14 +7,11 @@ import java.sql.Date;
 @Entity
 public class Annonce {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "annonce_generator")
-    @SequenceGenerator(name = "annonce_generator", sequenceName = "seq_annonce", allocationSize = 1)
     @Column(name = "id_annonce")
     private String idAnnonce;
     @Column(name = "date_annonce", nullable = false)
     private Date dateAnnonce;
     private double prix;
-
     @ManyToOne
     @JoinColumn(name = "id_voiture", nullable = false)
     private Voiture voiture;

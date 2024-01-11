@@ -7,8 +7,6 @@ import java.sql.Date;
 @Entity
 public class Vente {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vente_generator")
-    @SequenceGenerator(name = "vente_generator", sequenceName = "seq_vente", allocationSize = 1)
     @Column(name = "id_vente")
     private String idVente;
     @ManyToOne

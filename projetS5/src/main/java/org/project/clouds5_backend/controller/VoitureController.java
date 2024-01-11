@@ -59,7 +59,7 @@ public class VoitureController {
     }
 
     @PostMapping
-    public ResponseEntity<Reponse<Voiture>> createVoiture(@Valid @RequestBody Voiture voiture) {
+    public ResponseEntity<Reponse<Voiture>> createVoiture(@RequestBody Voiture voiture) {
         Reponse<Voiture> reponse = new Reponse<>();
         try{
             Voiture voitureCreated = voitureService.createVoiture(voiture);

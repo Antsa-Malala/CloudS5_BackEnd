@@ -7,8 +7,6 @@ import java.sql.Date;
 @Entity
 public class Validation {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "validation_generator")
-    @SequenceGenerator(name = "validation_generator", sequenceName = "seq_validation", allocationSize = 1)
     @Column(name = "id_validation")
     private String idValidation;
     @Column(name = "date_validation", nullable = false)
