@@ -10,6 +10,7 @@ public class Marque {
     private int idMarque;
     @Column(name = "nom_marque")
     private String nomMarque;
+    @Column(name = "etat_marque")
     private int etat;
 
     public Marque() {

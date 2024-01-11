@@ -10,6 +10,7 @@ public class Ville {
     private int idVille;
     @Column(name = "nom_ville")
     private String nomVille;
+    @Column(name = "etat_ville")
     private int etat;
 
     public Ville() {
