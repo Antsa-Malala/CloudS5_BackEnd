@@ -1,0 +1,51 @@
+package org.project.clouds5_backend.model;
+
+import jakarta.persistence.*;
+
+import java.sql.Date;
+
+@Entity
+public class Vente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vente_generator")
+    @SequenceGenerator(name = "vente_generator", sequenceName = "seq_vente", allocationSize = 1)
+    @Column(name = "id_vente")
+    private String idVente;
+    @ManyToOne
+    @JoinColumn(name = "id_annonce", nullable = false)
+    private Annonce annonce;
+    private Date dateVente;
+
+    public String getIdVente() {
+        return idVente;
+    }
+
+    public void setIdVente(String idVente) {
+        this.idVente = idVente;
+    }
+
+    public Annonce getAnnonce() {
+        return annonce;
+    }
+
+    public void setAnnonce(Annonce annonce) {
+        this.annonce = annonce;
+    }
+
+    public Date getDateVente() {
+        return dateVente;
+    }
+
+    public void setDateVente(Date dateVente) {
+        this.dateVente = dateVente;
+    }
+
+    public Vente() {
+    }
+
+    public Vente(String idVente, Annonce annonce, Date dateVente) {
+        this.setIdVente(idVente);
+        this.setAnnonce(annonce);
+        this.setDateVente(dateVente);
+    }
+}
