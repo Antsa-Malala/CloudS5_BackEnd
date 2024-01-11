@@ -10,6 +10,7 @@ public class Categorie {
     private int idCategorie;
     @Column(name = "nom_categorie")
     private String nomCategorie;
+    @Column(name = "etat_categorie")
     private int etat;
 
     public Categorie() {
