@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bdcb3117-6cac-4379-8888-600073f8c58d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_4_14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_4_14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_6_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_15_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_15_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_15_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_15_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_15_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_15_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_4_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_5_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_commons_1_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_observation_1_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_smallrye_jandex_3_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_2_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_inject_jakarta_inject_api_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_3_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_4_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_14_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_14_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_2_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_13_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_21_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_21_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_10_1_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_10_1_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_10_1_17.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_24_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_awaitility_awaitility_4_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_31_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_angus_angus_activation_2_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_core_4_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_4_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_4_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_6_0_6_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_orm_hibernate_core_6_4_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_8_0_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_5_3_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_5_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_4_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_record_codec_4_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_4_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_sync_4_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_6_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_2_0_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_4_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_6_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/schemas.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/CloudS5BackEndApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/AnnonceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/BoiteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/CategorieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/CouleurController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/EnergieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/FavorisController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/MarqueController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/ModeleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/PlaceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/PorteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/StatistiqueController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/UtilisateurController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/ValidationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/VenteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/VilleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/controller/VoitureController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Annonce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Boite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Categorie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Couleur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Energie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Favoris.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Marque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Modele.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Place.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Porte.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Reponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Statistique.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Utilisateur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Validation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Vente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Ville.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/model/Voiture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/AnnonceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/BoiteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/CategorieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/CouleurRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/EnergieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/FavorisRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/MarqueRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/ModelRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/ModeleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/PlaceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/PorteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/StatistiqueRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/UtilisateurRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/ValidationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/VenteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/VilleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/repository/VoitureRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/AnnonceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/BoiteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/CategorieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/CouleurService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/EnergieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/FavorisService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/MarqueService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/ModeleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/PlaceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/PorteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/StatistiqueService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/UtilisateurService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/ValidationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/VenteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/VilleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/java/org/project/clouds5_backend/service/VoitureService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projetS5/src/test/java/org/project/clouds5_backend/CloudS5BackEndApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2arFPi2YKsHouc0FBy445vS1Ez1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Antsa/Desktop/CloudS5_BackEnd&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="CloudS5BackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.project.clouds5_backend.CloudS5BackEndApplication" />
+      <module name="CloudS5_BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.project.clouds5_backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CloudS5BackEndApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdcb3117-6cac-4379-8888-600073f8c58d" name="Changes" comment="" />
+      <created>1705068769427</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705068769427</updated>
+    </task>
+    <servers />
+  </component>
+</project>
