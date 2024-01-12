@@ -1,0 +1,47 @@
+package cloud.projetS5.service;
+
+import cloud.projetS5.model.Inbox;
+import cloud.projetS5.model.Message;
+import cloud.projetS5.model.Utilisateur;
+import cloud.projetS5.repository.InboxRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.List;
+
+@Service
+public class InboxService {
+    private InboxRepository inboxRepository;
+
+    public InboxService(InboxRepository inboxRepository) {
+        this.inboxRepository = inboxRepository;
+    }
+
+    public List<Inbox> getMyBox(String iduser){
+        return inboxRepository.getMyInbox(iduser);
+    }
+
+//    public HashMap<Utilisateur, Inbox> getMyInboxContent(String idUser){
+//
+//    }
+
+    public Inbox saveLastMessage(Message message){
+        Inbox last = inboxRepository.ourLastMessage(message.getIdUtilisateur1(), message.getIdUtilisateur2());
+        System.out.println("THe messages is " + last.getLastMessage() + " with id " + last.getId());
+        if(last != null){
+            Inbox inbox = inboxRepository.deleteInbox(message.getIdUtilisateur1(), message.getIdUtilisateur2());
+            last.setDateMessage(message.getDateMessage());
+            last.setLastMessage(message.getContenu());
+            inboxRepository.save(last); // USE FIND AND REPLACE HERE
+
+        } else {
+            last = new Inbox();
+            last.setIdUtilisateur1(message.getIdUtilisateur1());
+            last.setIdUtilisateur2(message.getIdUtilisateur2());
+            last.setDateMessage(message.getDateMessage());
+            last.setLastMessage(message.getContenu());
+            inboxRepository.save(last);
+        }
+        return last;
+    }
+}
