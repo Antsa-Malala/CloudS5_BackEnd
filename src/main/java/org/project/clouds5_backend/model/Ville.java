@@ -10,7 +10,7 @@ public class Ville {
     @Column(name = "id_ville")
     private int idVille;
     @NotBlank(message = "Le nom de la ville est obligatoire")
-    @Column(name = "nom_ville", nullable = false)
+    @Column(name = "nom_ville", nullable = false,length = 100)
     private String nomVille;
     @Column(name = "etat_ville")
     private int etat;

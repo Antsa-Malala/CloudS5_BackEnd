@@ -9,3 +9,5 @@ public interface VilleRepository extends JpaRepository<Ville, Integer> {
     List<Ville> findByEtatNot(Integer etat);
     Ville findByIdVilleAndEtatNot(Integer id, Integer etat);
 }
+
+

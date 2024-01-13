@@ -1,20 +1,36 @@
 package org.project.clouds5_backend.service;
 
+import jdk.jshell.execution.Util;
 import org.project.clouds5_backend.model.Utilisateur;
-import org.project.clouds5_backend.model.Ville;
-import org.project.clouds5_backend.repository.UtilisateurRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import org.project.clouds5_backend.repository.UtilisateurRepository;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UtilisateurService {
+public class UtilisateurService implements UtilisateurServiceInter {
     private final UtilisateurRepository utilisateurRepository;
 
     public UtilisateurService(UtilisateurRepository utilisateurRepository) {
         this.utilisateurRepository = utilisateurRepository;
+    }
+
+    @Override
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsService() {
+            @Override
+            public UserDetails loadUserByUsername(String username) {
+                return utilisateurRepository.findByMail(username)
+                        .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+            }
+        };
     }
 
     public List<Utilisateur> getAllUtilisateurs() {
@@ -72,5 +88,20 @@ public class UtilisateurService {
         }else {
             throw new RuntimeException("Utilisateur non trouvee");
         }
+    }
+
+    public Utilisateur getConnected()
+    {
+        Utilisateur connecte=new Utilisateur();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated()) {
+
+            Object principal = authentication.getPrincipal();
+
+            if (principal instanceof Utilisateur) {
+                connecte = (Utilisateur) principal;
+            }
+        }
+        return connecte;
     }
 }

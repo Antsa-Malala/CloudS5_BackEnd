@@ -10,7 +10,7 @@ public class Categorie {
     @Column(name = "id_categorie")
     private int idCategorie;
     @NotBlank(message = "Le nom de la catégorie est obligatoire")
-    @Column(name = "nom_categorie", nullable = false)
+    @Column(name = "nom_categorie", nullable = false,length = 100)
     private String nomCategorie;
     @Column(name = "etat_categorie")
     private int etat;

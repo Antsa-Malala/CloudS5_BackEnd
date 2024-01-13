@@ -93,8 +93,19 @@ public class Annonce {
     }
 
     public Annonce(String idAnnonce, Date dateAnnonce, double prix, Voiture voiture, Ville ville, String description,
-            int etat, Utilisateur utilisateur) {
+                   int etat, Utilisateur utilisateur) {
         this.setIdAnnonce(idAnnonce);
+        this.setDateAnnonce(dateAnnonce);
+        this.setPrix(prix);
+        this.setVoiture(voiture);
+        this.setVille(ville);
+        this.setDescription(description);
+        this.setEtat(etat);
+        this.setUtilisateur(utilisateur);
+    }
+
+    public Annonce(Date dateAnnonce, double prix, Voiture voiture, Ville ville, String description,
+                   int etat, Utilisateur utilisateur) {
         this.setDateAnnonce(dateAnnonce);
         this.setPrix(prix);
         this.setVoiture(voiture);

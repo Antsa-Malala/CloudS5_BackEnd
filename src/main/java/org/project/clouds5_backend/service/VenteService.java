@@ -64,4 +64,9 @@ public class VenteService {
             throw new RuntimeException("Vente non trouvee");
         }
     }
+
+    public String getNextValSequence()
+    {
+        return venteRepository.getNextValSequence();
+    }
 }

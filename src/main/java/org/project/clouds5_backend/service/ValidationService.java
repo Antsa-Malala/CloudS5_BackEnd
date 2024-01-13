@@ -65,4 +65,10 @@ public class ValidationService {
             throw new RuntimeException("Validation non trouvee");
         }
     }
+
+    public String getNextValSequence()
+    {
+        return validationRepository.getNextValSequence();
+    }
+
 }
