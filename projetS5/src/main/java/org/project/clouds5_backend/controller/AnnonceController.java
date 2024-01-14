@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -107,6 +108,45 @@ public class AnnonceController {
                 return ResponseEntity.ok().body(reponse);
             }else{
                 reponse.setErreur("Annonce non trouvee");
+                return ResponseEntity.status(404).body(reponse);
+            }
+        }catch (Exception e) {
+            reponse.setErreur(e.getMessage());
+            return ResponseEntity.status(500).body(reponse);
+        }
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<Reponse<List<Annonce>>> searchAnnonce(
+            @RequestParam(required = false) String motCle,
+            @RequestParam(required = false) Date dateDebut,
+            @RequestParam(required = false) Date dateFin,
+            @RequestParam(required = false) Double prixMin,
+            @RequestParam(required = false) Double prixMax,
+            @RequestParam(required = false) Integer idCategorie,
+            @RequestParam(required = false) Integer idMarque,
+            @RequestParam(required = false) Integer idModel,
+            @RequestParam(required = false) Integer idBoite,
+            @RequestParam(required = false) Integer idEnergie,
+            @RequestParam(required = false) Integer idPlace,
+            @RequestParam(required = false) Integer idPorte,
+            @RequestParam(required = false) Integer idCouleur,
+            @RequestParam(required = false) Integer idVille,
+            @RequestParam(required = false) Integer idUtilisateur,
+            @RequestParam(required = false) Double kilometrageMin,
+            @RequestParam(required = false) Double kilometrageMax,
+            @RequestParam(required = false) Double consommationMin,
+            @RequestParam(required = false) Double consommationMax
+    ) {
+        Reponse<List<Annonce>> reponse = new Reponse<>();
+        try{
+            List<Annonce> annonces = annonceService.rechercheAvancee(motCle, dateDebut, dateFin, prixMin, prixMax, idCategorie, idMarque, idModel, idBoite, idEnergie, idPlace, idPorte, idCouleur, idVille, idUtilisateur, kilometrageMin, kilometrageMax, consommationMin, consommationMax);
+            if(!annonces.isEmpty()){
+                reponse.setData(annonces);
+                reponse.setRemarque("Annonces trouvees");
+                return ResponseEntity.ok().body(reponse);
+            }else{
+                reponse.setErreur("Aucune annonce trouvee");
                 return ResponseEntity.status(404).body(reponse);
             }
         }catch (Exception e) {
