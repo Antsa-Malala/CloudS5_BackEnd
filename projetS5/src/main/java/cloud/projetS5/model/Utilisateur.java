@@ -110,4 +110,11 @@ public class Utilisateur {
         this.role = role;
     }
 
+    public Ville getVille() {
+        return ville;
+    }
+
+    public void setVille(Ville ville) {
+        this.ville = ville;
+    }
 }

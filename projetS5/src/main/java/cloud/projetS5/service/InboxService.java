@@ -13,17 +13,27 @@ import java.util.List;
 public class InboxService {
     private InboxRepository inboxRepository;
 
-    public InboxService(InboxRepository inboxRepository) {
+    private UtilisateurService utilisateurService;
+
+    public InboxService(InboxRepository inboxRepository, UtilisateurService utilisateurService) {
         this.inboxRepository = inboxRepository;
+        this.utilisateurService = utilisateurService;
     }
 
     public List<Inbox> getMyBox(String iduser){
         return inboxRepository.getMyInbox(iduser);
     }
 
-//    public HashMap<Utilisateur, Inbox> getMyInboxContent(String idUser){
-//
-//    }
+    public HashMap<Utilisateur, Inbox> getMyInboxContent(String idUser){
+        List<Inbox> myInboxes = inboxRepository.getMyInbox(idUser);
+        HashMap<Utilisateur, Inbox> result = new HashMap<>();
+        for(Inbox inbox : myInboxes){
+            String otherUser = inbox.getIdUtilisateur1();
+            if(otherUser.equals(idUser)) otherUser = inbox.getIdUtilisateur2();
+            result.put(utilisateurService.getUtilisateurById(otherUser), inbox);
+        }
+        return result;
+    }
 
     public Inbox saveLastMessage(Message message){
         Inbox last = inboxRepository.ourLastMessage(message.getIdUtilisateur1(), message.getIdUtilisateur2());
